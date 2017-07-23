@@ -1,0 +1,120 @@
+<rss version="2.0"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+        >
+    <hw:theme-options>
+        <options>
+            <!-- article -->
+            <option>
+                <params name="content_classes">
+                    <params name="single">
+                        <param name="body_class"><![CDATA[single-body-class]]></param>
+                        <param name="post_class"><![CDATA[single-post-class]]></param>
+                        <param name="remove_default"><![CDATA[on]]></param>
+                    </params>
+                    <params name="archive">
+                        <param name="body_class"><![CDATA[]]></param>
+                        <param name="post_class"><![CDATA[]]></param>
+                        <param name="remove_default"><![CDATA[on]]></param>
+                    </params>
+                </params>
+
+                <param name="excerpt_more"><![CDATA[...]]></param>
+                <param name="clean_p_excerpt"><![CDATA[1]]></param>
+                <param name="morelink_text"><![CDATA[> Read more]]></param>
+                <param name="excerpt_leng"><![CDATA[]]></param>
+                <param name="wpautop_content"><![CDATA[1]]></param>
+                <param name="wpautop_excerpt"><![CDATA[1]]></param>
+
+            </option>
+            <!-- footer -->
+            <option name="footer">
+                <hw:params>
+                    <param name="footer"><![CDATA[thong tin footer moi sua doi]]></param>
+                    <param name="before_footer"><![CDATA[before footer]]></param>
+                    <param name="after_footer"><![CDATA[after footer]]></param>
+                </hw:params>
+                <hw:skin name="footer_skin">
+                    <skin:skin_name><![CDATA[footer1]]></skin:skin_name>
+                    <skin:skin_type>file</skin:skin_type>
+                    <skin:instance>footer</skin:instance>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+            </option>
+            <!-- feature settings -->
+            <option name="scroll2top">
+                <hw:skin name="scroll2top_skin">
+                    <skin:skin_name><![CDATA[default]]></skin:skin_name>
+                    <skin:file><![CDATA[back-to-top.png]]></skin:file>
+                    <skin:skin_type>link</skin:skin_type>
+                    <skin:instance>scroll2top</skin:instance>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+
+            </option>
+            <option>
+                <param name="effect" ><![CDATA[snow]]></param>
+                <param name="fancybox">1</param>
+                <params name="fancybox_settings">
+                    <param name="padding"><![CDATA[]]></param>
+                    <param name="margin"><![CDATA[]]></param>
+                    <param name="width"><![CDATA[]]></param>
+                    <param name="height"><![CDATA[]]></param>
+                    <param name="minWidth"><![CDATA[]]></param>
+                    <param name="minHeight"><![CDATA[]]></param>
+                    <param name="maxWidth"><![CDATA[]]></param>
+                    <param name="maxHeight"><![CDATA[]]></param>
+                </params>
+
+            </option>
+            <!-- socials -->
+            <option name="social">
+                <hw:facebook><![CDATA[http://facebook.com/hoangweb]]></hw:facebook>
+                <hw:google><![CDATA[http://plus.google.com/hoangweb]]></hw:google>
+                <hw:twitter><![CDATA[https://twitter.com/hoangweb]]></hw:twitter>
+                <hw:youtube ><![CDATA[http://youtube.com/hoangweb]]></hw:youtube>
+                <hw:skin name="social_skin">
+                    <skin:skin_name><![CDATA[skin]]></skin:skin_name>
+                    <skin:skin_type>file</skin:skin_type>
+                    <skin:instance>social</skin:instance>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+            </option>
+            <!-- multiple languages -->
+            <option name="translate">
+                <hw:style ><![CDATA[dropdown]]></hw:style>
+                <hw:skin name="mqtrans_skin">
+                    <skin:skin_name><![CDATA[default]]></skin:skin_name>
+                    <skin:skin_type>file</skin:skin_type>
+                    <skin:instance>mqtrans</skin:instance>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+                <hw:use_google_translate>1</hw:use_google_translate>
+            </option>
+            <!-- advertising -->
+            <option name="ads">
+                <hw:enable><![CDATA[1]]></hw:enable>
+                <hw:active_mobile><![CDATA[0]]></hw:active_mobile>
+                <hw:effects><![CDATA[fixed_to_top]]></hw:effects>
+                <hw:css_selector><![CDATA[.main]]></hw:css_selector>
+                <hw:ads_width><![CDATA[120]]></hw:ads_width>
+                <hw:top><![CDATA[120]]></hw:top>
+                <!-- <hw:left_ads shortcode="1"><![CDATA[[hw_image]images/vertical-ad.gif[/hw_image] ]]></hw:left_ads> -->
+                <hw:right_ads >
+                    <params export="ab">
+                        <param name="ab">
+                            <hw:shortcode type="image" value="images/vertical-ad1.gif"/>
+                        </param>
+                    </params>
+                </hw:right_ads>
+                <hw:left_ads>
+                    <params export="ab">
+                        <param name="ab">
+                            <hw:shortcode type="image" value="images/vertical-ad.gif"/>
+                        </param>
+                    </params>
+                </hw:left_ads>
+            </option>
+        </options>
+    </hw:theme-options>
+</rss>

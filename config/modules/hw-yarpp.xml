@@ -1,0 +1,63 @@
+<rss version="2.0"
+     xmlns:params="http://hoangweb.com/export/1.0/params/"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+        >
+    <hw:hw-yarpp>
+        <options>
+            <option>
+
+                <param name="excerpt_length"><![CDATA[10]]></param>
+                <params name="weight">
+                    <params name="tax">
+                        <param name="category"><![CDATA[1]]></param>
+                        <param name="post_tag"><![CDATA[1]]></param>
+                        <param name="tax2"><![CDATA[1]]></param>
+                    </params>
+                </params>
+                <params name="require_tax">
+
+                </params>
+
+                <params name="hwrp_allow_post_types">
+                    <param>post</param>
+                </params>
+                <params name="hwrp_skins">
+                    <params name="post"><!-- for 'post' -->
+                        <param name="active"><![CDATA[1]]></param>
+                        <param name="widget_config"><![CDATA[]]></param>
+                        <param name="box_skin"><![CDATA[sidebar-left]]></param>
+                        <param name="box_widget_skin"><![CDATA[skin_default]]></param>
+                        <param name="title"><![CDATA[Tin lien quan]]></param>
+                        <param name="filter_terms"><![CDATA[on]]></param>
+
+                        <params:skin_encoded name="skin" instance="hw-relatedposts-skin">
+                            <skin:skin><![CDATA[skin1]]></skin:skin>
+                            <skin:source>plugin</skin:source>
+                        </params:skin_encoded>
+                        <params:skin_instance name="hwskin_config" instance="hw-relatedposts-skin">
+
+                        </params:skin_instance>
+
+                    </params>
+                    <params name="san-pham"><!-- for 'san-pham' custom post type -->
+                        <param name="active"><![CDATA[]]></param>
+                        <param name="widget_config"><![CDATA[]]></param>
+                        <param name="box_skin"><![CDATA[hw-sidebar-data]]></param>
+                        <param name="box_widget_skin"><![CDATA[skin_default]]></param>
+                        <param name="title"><![CDATA[Tin lien quan]]></param>
+                        <param name="filter_terms"><![CDATA[on]]></param>
+                        <!--
+                        <params:skin_encoded name="skin" instance="yarpp">
+                            <skin:skin><![CDATA[skin1]]></skin:skin>
+                        </params:skin_encoded>
+                        <params:skin_instance name="hwskin_config" instance="yarpp">
+
+                        </params:skin_instance>
+                        -->
+                    </params>
+                </params>
+            </option>
+        </options>
+    </hw:hw-yarpp>
+</rss>

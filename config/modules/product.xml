@@ -1,0 +1,193 @@
+<rss version="2.0"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+     xmlns:wp="http://wordpress.org/export/1.2/"
+        >
+    <hw:product>
+        <!-- color attribute -->
+        <wp:term>
+            <wp:term_taxonomy>pa_color</wp:term_taxonomy>
+            <wp:term_slug>black</wp:term_slug>
+            <wp:term_name><![CDATA[Black]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>pa_color</wp:term_taxonomy>
+            <wp:term_slug>blue</wp:term_slug>
+            <wp:term_name><![CDATA[Blue]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>pa_attr-1</wp:term_taxonomy>
+            <wp:term_slug>item-1</wp:term_slug>
+            <wp:term_name><![CDATA[item 1]]></wp:term_name>
+        </wp:term>
+        <!-- product category -->
+        <wp:term>
+            <wp:term_taxonomy>product_cat</wp:term_taxonomy>
+            <wp:term_slug>clothing</wp:term_slug>
+            <wp:term_name><![CDATA[Clothing]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_cat</wp:term_taxonomy>
+            <wp:term_slug>hoodies</wp:term_slug>
+            <wp:term_parent>clothing</wp:term_parent>
+            <wp:term_name><![CDATA[Hoodies]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_cat</wp:term_taxonomy>
+            <wp:term_slug>posters</wp:term_slug>
+            <wp:term_name><![CDATA[Posters]]></wp:term_name>
+        </wp:term>
+        <!-- product tags -->
+        <wp:term>
+            <wp:term_taxonomy>product_tag</wp:term_taxonomy>
+            <wp:term_slug>tag-1</wp:term_slug>
+            <wp:term_name><![CDATA[Tag 1]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_tag</wp:term_taxonomy>
+            <wp:term_slug>tag-2</wp:term_slug>
+            <wp:term_name><![CDATA[Tag 2]]></wp:term_name>
+        </wp:term>
+
+        <!-- product type -->
+        <!-- # just by default from woocommerce
+        <wp:term>
+            <wp:term_taxonomy>product_type</wp:term_taxonomy>
+            <wp:term_slug>simple</wp:term_slug>
+            <wp:term_name><![CDATA[simple]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_type</wp:term_taxonomy>
+            <wp:term_slug>variable</wp:term_slug>
+            <wp:term_name><![CDATA[variable]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_type</wp:term_taxonomy>
+            <wp:term_slug>external</wp:term_slug>
+            <wp:term_name><![CDATA[external]]></wp:term_name>
+        </wp:term>
+        <wp:term>
+            <wp:term_taxonomy>product_type</wp:term_taxonomy>
+            <wp:term_slug>grouped</wp:term_slug>
+            <wp:term_name><![CDATA[grouped]]></wp:term_name>
+        </wp:term>
+        -->
+        <!-- prepare pages -->
+        <item update="1">
+            <wp:title><![CDATA[Cart]]></wp:title>
+            <wp:content><![CDATA[[woocommerce_cart]]]></wp:content>
+            <wp:excerpt><![CDATA[]]></wp:excerpt>
+            <wp:post_type>page</wp:post_type>
+
+        </item>
+        <item update="1">
+            <wp:title><![CDATA[Checkout]]></wp:title>
+            <wp:content><![CDATA[[woocommerce_checkout]]]></wp:content>
+            <wp:excerpt><![CDATA[]]></wp:excerpt>
+            <wp:post_type>page</wp:post_type>
+
+        </item>
+        <item update="1">
+            <wp:title><![CDATA[My Account]]></wp:title>
+            <wp:content><![CDATA[[woocommerce_my_account]]]></wp:content>
+            <wp:excerpt><![CDATA[]]></wp:excerpt>
+            <wp:post_type>page</wp:post_type>
+
+        </item>
+        <item update="1">
+            <wp:title><![CDATA[Shop]]></wp:title>
+            <wp:content><![CDATA[[]]]></wp:content>
+            <wp:excerpt><![CDATA[]]></wp:excerpt>
+            <wp:post_type>page</wp:post_type>
+        </item>
+
+
+        <item update="1">
+            <wp:title><![CDATA[HW Woo Logo]]></wp:title>
+            <wp:content><![CDATA[demo content]]></wp:content>
+            <wp:excerpt><![CDATA[demo excerpt]]></wp:excerpt>
+            <wp:post_type>product</wp:post_type>
+            <category domain="product_cat" nicename="clothing"><![CDATA[Clothing]]></category>
+            <category domain="product_cat" nicename="t-shirts"><![CDATA[T-shirts]]></category>
+            <category domain="product_tag" nicename="tag-1"><![CDATA[Tag 1]]></category>
+
+            <!-- <category domain="product_type" nicename="simple"><![CDATA[simple]]></category> -->
+
+            <hw:product_type>simple</hw:product_type>
+            <hw:product_attributes>
+                <params name="color">
+                    <param>black</param>
+                    <param>white</param>
+                </params>
+                <params name="attr1">
+                    <param>item-1</param>
+                    <param>item-2</param>
+                </params>
+
+            </hw:product_attributes>
+
+            <hw:meta name="_stock_status"><![CDATA[instock]]></hw:meta>
+            <hw:meta name="total_sales"><![CDATA[0]]></hw:meta>
+            <hw:meta name="_downloadable"><![CDATA[no]]></hw:meta>
+            <hw:meta name="_virtual"><![CDATA[no]]></hw:meta>
+            <hw:meta name="_regular_price"><![CDATA[20]]></hw:meta>
+            <hw:meta name="_sale_price"><![CDATA[18]]></hw:meta>
+            <hw:meta name="_stock"><![CDATA[5]]></hw:meta>
+            <hw:meta name="_product_image_gallery"><![CDATA[]]></hw:meta>
+            <hw:meta name="_backorders"><![CDATA[no]]></hw:meta>
+            <hw:meta name="_manage_stock"><![CDATA[yes]]></hw:meta>
+            <hw:meta name="_product_attributes">
+
+            </hw:meta>
+            <hw:meta name="_product_image_gallery">
+                <params join=",">
+                    <param><hw:attachment _id="p1"></hw:attachment></param>
+                    <param><hw:attachment _id="p10"></hw:attachment></param>
+                </params>
+            </hw:meta>
+
+            <hw:attachment>
+                <hw:_id>p1</hw:_id>
+                <hw:url>images/T_1_front.jpg</hw:url>
+                <hw:thumbnail>1</hw:thumbnail>
+            </hw:attachment>
+            <hw:attachment>
+                <hw:_id>p10</hw:_id>
+                <hw:url>images/T_1_back.jpg</hw:url>
+            </hw:attachment>
+        </item>
+        <!-- settings -->
+        <options>
+            <option>
+                <hw:params>
+                    <param name="store_location"><![CDATA[vi]]></param>
+                    <param name="currency_code"><![CDATA[VND]]></param>
+                    <param name="currency_pos"><![CDATA[right_space]]></param>
+                    <param name="thousand_sep"><![CDATA[,]]></param>
+                    <param name="decimal_sep"><![CDATA[.]]></param>
+                    <param name="weight_unit"><![CDATA[kg]]></param>
+                    <param name="dimension_unit"><![CDATA[cm]]></param>
+                    <param name="woocommerce_calc_shipping"><![CDATA[no]]></param>
+                    <param name="woocommerce_calc_taxes"><![CDATA[no]]></param>
+                    <param name=""><![CDATA[]]></param>
+                </hw:params>
+            </option>
+            <option name="cloudzoom">
+                <hw:params>
+                    <param name="images_from_current_post"><![CDATA[on]]></param>
+                    <param name="zoombig_width"><![CDATA[]]></param>
+                    <param name="zoombig_height"><![CDATA[]]></param>
+                    <param name="container_id"><![CDATA[hw-zoom-id]]></param>
+                    <param name="container_class"><![CDATA[hw-zoom-class]]></param>
+                    <param name="thumb_anchor_class"><![CDATA[clzoom-thumb]]></param>
+                    <param name="thumb_img_class"><![CDATA[clzoom-img]]></param>
+                    <param name="smallthumb_container_class"><![CDATA[clzoom-smallimg-container]]></param>
+                    <param name="smallthumb_class"><![CDATA[]]></param>
+                    <param name="smallthumb_item_class"><![CDATA[]]></param>
+                    <param name="smallthumb_anchor_class"><![CDATA[]]></param>
+                    <param name="smallthumb_img_class"><![CDATA[]]></param>
+                </hw:params>
+            </option>
+        </options>
+    </hw:product>
+</rss>

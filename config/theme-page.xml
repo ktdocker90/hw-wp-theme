@@ -1,0 +1,13 @@
+<theme name="theme 1"
+       xmlns:param="http://hoangweb.com/export/1.0/param/"
+       xmlns:params="http://hoangweb.com/export/1.0/params/"
+       xmlns:hw="http://hoangweb.com/export/1.0/"
+        >
+    <assets>
+        <!-- <file type="js"><![CDATA[1.js]]></file> -->
+        <file type="js" handle="jquery" ver="1.3.2"><![CDATA[https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js]]></file>
+        <file type="js" depends="jquery" ver="1.3.2"><![CDATA[assets/js/bootstrap.min.js]]></file>
+        <file type="css"><![CDATA[assets/css/bootstrap.min.css]]></file>
+        <file type="css"><![CDATA[assets/css/blog-post.css]]></file>
+    </assets>
+</theme>

@@ -1,0 +1,84 @@
+<rss version="2.0"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+     xmlns:wp="http://wordpress.org/export/1.2/"
+        >
+    <hw:hw-wpcf7>
+        <!-- posts (mine creative) -->
+        <posts><!-- merge into {active-theme}/modules/hw-wpcf7/export.xml (should be rename to 'data.xml') -->
+            <item update="1">
+                <wp:title>Lien he</wp:title>
+                <hw:skin name="skin">
+                    <skin:skin_name><![CDATA[skin1]]></skin:skin_name>
+                    <skin:skin_type>file</skin:skin_type>
+                    <skin:file></skin:file>
+                    <skin:instance>hwcf7</skin:instance>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+                <hw:form_html>
+                    <hw:html>
+                        <![CDATA[<p>Tên của bạn (bắt buộc)<br />
+    [text* your-name] </p>
+
+<p>Địa chỉ Email (bắt buộc)<br />
+    [email* your-email] </p>
+
+<p>Tiêu đề:<br />
+    [text your-subject] </p>
+
+<p>Thông điệp<br />
+    [textarea your-message] </p>
+
+<p>[submit "Gửi đi"]</p>
+[your-subject]
+[your-name] <hoang@mail.com>
+Gửi đến từ: [your-name] <[your-email]>
+Tiêu đề: [your-subject]
+
+Nội dung thông điệp:
+[your-message]
+
+]]></hw:html>
+                    <hw:form_class><![CDATA[class1]]></hw:form_class>
+                    <hw:form_id><![CDATA[form-id]]></hw:form_id>
+                    <hw:form_name><![CDATA[form-name]]></hw:form_name>
+                    <hw:form_enctype><![CDATA[]]></hw:form_enctype>
+
+                </hw:form_html>
+                <hw:mail>
+                    <param name="subject"><![CDATA[[your-subject]]]></param>
+                    <param name="sender"><![CDATA[[your-name] <hoang@mail.com>]]></param>
+                    <param name="body"><![CDATA[Gửi đến từ: [your-name] <[your-email]>
+    Tiêu đề: [your-subject]
+    <ul>
+    <li>Tên của bạn (*)<br/>
+        [your-name]</li>
+    <li>Email(*)<br/>
+        [your-email]</li>
+    <li>Chủ đề<br/>
+        [your-subject]</li>
+    <li>Nội dung<br/>
+        [your-message]</li>
+    </ul>]]></param>
+                    <param name="recipient"><![CDATA[hoang@mail.com]]></param>
+                    <param name="additional_headers">Reply-To: [your-email]</param>
+                </hw:mail>
+                <hw:google_formID><![CDATA[1GzynAtb3hiv6E0mFE0KhxMwARSYGdGSY8oJ5ImGM7m4]]></hw:google_formID>
+            </item>
+        </posts>
+        <!-- options -->
+        <options>
+            <option name="">
+                <hw:skin name="loadingImg">
+                    <skin:skin_name><![CDATA[default]]></skin:skin_name>
+                    <skin:skin_type>link</skin:skin_type>
+                    <skin:file>loading13.gif</skin:file>
+                    <skin:instance>hwcf7_images</skin:instance>
+                    <skin:group>ajaxLoading</skin:group>
+                    <skin:source>plugin</skin:source>
+                </hw:skin>
+            </option>
+        </options>
+    </hw:hw-wpcf7>
+
+</rss>

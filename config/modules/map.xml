@@ -1,0 +1,16 @@
+<rss version="2.0"
+     xmlns:params="http://hoangweb.com/export/1.0/params/"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+        >
+    <hw:map>
+        <options>
+            <option>
+                <param name="address">Am ha, ha hoa, phu tho</param>
+                <param name="show_searchbox">1</param>
+                <param name="width">500</param>
+                <param name="height">400</param>
+            </option>
+        </options>
+    </hw:map>
+</rss>

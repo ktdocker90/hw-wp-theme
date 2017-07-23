@@ -1,0 +1,137 @@
+<theme name="theme 1"
+       xmlns:param="http://hoangweb.com/export/1.0/param/"
+       xmlns:params="http://hoangweb.com/export/1.0/params/"
+       xmlns:hw="http://hoangweb.com/export/1.0/"
+       xmlns:wp="http://wordpress.org/export/1.2/"
+        >
+    <site>
+        <hw:name><![CDATA[Site name * my-theme]]></hw:name>
+        <hw:description><![CDATA[Site description]]></hw:description>
+        <hw:logo><![CDATA[images/logo.png]]></hw:logo>
+        <hw:banner><![CDATA[images/banner.jpg]]></hw:banner>
+        <hw:phone><![CDATA[01663.390.250]]></hw:phone>
+        <hw:email><![CDATA[hoangsoft90@gmail.com]]></hw:email>
+        <hw:address><![CDATA[Thanh xuân, Hà nội]]></hw:address>
+        <hw:testimonials><![CDATA[Cong ty TNHH Hoangweb]]></hw:testimonials>
+        <hw:footer_text><![CDATA[footer info at bottom of page]]></hw:footer_text>
+    </site>
+    <configuration>
+        <!-- js library -->
+        <!--
+        <hw:libs>
+            <lib name="colorbox"/>
+            <lib name="tooltip"/>
+        </hw:libs>
+        -->
+        <hw:media>
+            <hw:thumbnail width="200" height="350"></hw:thumbnail>
+            <hw:medium width="350" height="360"></hw:medium>
+            <hw:large width="1024" height="1024"></hw:large>
+            <hw:custom-image width="100" height="100" crop="1"></hw:custom-image>
+
+            <hw:shop_catalog_image_size width="400" height="400" crop="1"></hw:shop_catalog_image_size>
+            <hw:shop_single_image_size width="600" height="600" crop="1"></hw:shop_single_image_size>
+            <hw:shop_thumbnail_image_size width="120" height="120" crop="0"></hw:shop_thumbnail_image_size>
+        </hw:media>
+        <!-- <hw:sample_data>dienthoai</hw:sample_data> -->
+        <hw:locale>vi</hw:locale>
+        <hw:settings>
+            <param name="woocommerce_enable_ajax_add_to_cart">1</param>
+            <param name="woocommerce_cart_redirect_after_add">0</param>
+        </hw:settings>
+    </configuration>
+    <!-- register menu if not exists -->
+    <menus>
+        <hw:nav_menu slug="menu1"><![CDATA[Menu 1]]></hw:nav_menu>
+        <hw:nav_menu slug="menu2"><![CDATA[Menu 2]]></hw:nav_menu>
+        <hw:nav_menu slug="primary"><![CDATA[Primary Menu]]></hw:nav_menu>
+    </menus>
+    <sidebars>
+        <hw:sidebar name="sidebar-left" >
+            <hw:params>
+                <param name="name"><![CDATA[Sidebar Left]]></param>
+                <param name="description"><![CDATA[sidebar 1]]></param>
+                <param name="before_widget"><![CDATA[<div id="%1$s" class="panel panel-default %2$s *1">]]></param>
+                <param name="before_title"><![CDATA[<div class="panel-heading"><h1 class="panel-title" style="%1$s {css_title}">]]></param>
+                <param name="after_title"><![CDATA[</h2></div><div class="panel-body">]]></param>
+                <param name="after_widget"><![CDATA[</div></div>]]></param>
+            </hw:params>
+            <hw:widget name="danhmuc"></hw:widget>
+            <hw:widget name="weather"></hw:widget>
+            <hw:widget name="categories1"/>
+        </hw:sidebar>
+        <hw:sidebar name="sidebar-right" >
+            <hw:params>
+                <param name="name"><![CDATA[Sidebar Right]]></param>
+                <param name="description"><![CDATA[sidebar Right]]></param>
+                <param name="before_widget"><![CDATA[<div id="%1$s" class="panel panel-default %2$s *1">]]></param>
+                <param name="before_title"><![CDATA[<div class="panel-heading"><h1 class="panel-title" style="%1$s {css_title}">]]></param>
+                <param name="after_title"><![CDATA[</h2></div><div class="panel-body">]]></param>
+                <param name="after_widget"><![CDATA[</div></div>]]></param>
+            </hw:params>
+            <hw:widget name="chat"></hw:widget>
+            <hw:widget name="counter"></hw:widget>
+        </hw:sidebar>
+        <hw:sidebar name="footer">
+            <hw:params>
+                <param name="name"><![CDATA[Sidebar Footer]]></param>
+                <param name="description"><![CDATA[sidebar Footer]]></param>
+                <param name="before_widget"><![CDATA[<div id="%1$s" class="col-sm-3 footer-blurb-item %2$s *1">]]></param>
+                <param name="before_title"><![CDATA[<h3 style="%1$s {css_title}">]]></param>
+                <param name="after_title"><![CDATA[</h3>]]></param>
+                <param name="after_widget"><![CDATA[</div>]]></param>
+            </hw:params>
+        </hw:sidebar>
+    </sidebars>
+
+    <!-- assets -->
+    <assets>
+        <!-- <file type="js" depends="jquery" ver=""><![CDATA[2.js]]></file> -->
+        <file type="js" handle="jquery" ver="1.3.2"><![CDATA[https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js]]></file>
+        <file type="js" depends="jquery" ver="1.3.2"><![CDATA[assets/js/bootstrap.min.js]]></file>
+        <file type="css"><![CDATA[assets/css/bootstrap.min.css]]></file>
+        <file type="css"><![CDATA[assets/css/blog-post.css]]></file>
+    </assets>
+    <assets page="archive">
+        <!-- <file type="js"><![CDATA[1.js]]></file> -->
+
+    </assets>
+
+    <!-- active modules -->
+    <modules only_list="0">
+        <!--
+        <module name="hw-wpcf7" status="1"/>
+        <module name="gallery" status="1"/>
+        -->
+        <module name="cloudzoom" status="1"/>
+        <module name="download-attachments" status="1"/>
+        <module name="hw-livechat" status="1"/>
+        <module name="hw-menu" status="1"/>
+        <module name="hw-ml-slider" status="1"/>
+        <module name="hw-social-sharing" status="1"/>
+        <module name="counter" status="1"/>
+        <module name="hw-yarpp" status="1"/>
+        <module name="breadcrumb" status="1"/>
+        <module name="pagination" status="1"/>
+        <module name="hw-list-custom-taxonomy-widget" status="1"/>
+
+        <module name="map" status="1"/><!-- find in modules.xml -->
+        <module name="gallery" status="1"/>
+
+    </modules>
+    <!-- active plugins -->
+    <plugins>
+        <plugin name="akismet" status="1"/>
+        <plugin name="taxonomy-terms-order" status="0"/>
+        <plugin name="download-attachments" status="1"/>
+    </plugins>
+    <!-- positions -->
+    <positions>
+        <position name="hw_after_header"><![CDATA[After header]]></position>
+        <position name="hw_before_main_content"><![CDATA[Before main content]]></position>
+        <position name="hw_after_main_content"><![CDATA[After main content]]></position>
+        <position name="hw_before_footer"><![CDATA[Before footer]]></position>
+        <position name="hw_before_loop"><![CDATA[Before loop]]></position>
+        <position name="hw_after_loop"><![CDATA[After loop]]></position>
+    </positions>
+</theme>

@@ -1,0 +1,67 @@
+<rss version="2.0"
+     xmlns:skin="http://hoangweb.com/export/1.0/skin/"
+     xmlns:hw="http://hoangweb.com/export/1.0/"
+     xmlns:wp="http://wordpress.org/export/1.2/"
+        >
+    <hw:hw-ml-slider>
+        <posts>
+            <item update="1" name="slider1" ><!-- from theme source -->
+                <wp:title>slider1</wp:title>
+                <hw:source><![CDATA[images/slides]]></hw:source>
+                <hw:skin name="theme" >
+                    <skin:skin_name><![CDATA[theme1]]></skin:skin_name>
+                    <skin:skin_type>file</skin:skin_type>
+                    <skin:instance>mlslider</skin:instance>
+                    <skin:source>plugin</skin:source>
+                    <skin:group></skin:group>
+                    <!-- <skin:screenshot_mimetype>png</skin:screenshot_mimetype> # auto detect -->
+                </hw:skin>
+                <hw:settings>
+                    <param name="width"><![CDATA[700]]></param>
+                    <param name="height"><![CDATA[300]]></param>
+                    <param name="effect"><![CDATA[fade]]></param>
+                    <param name="hw_mlcontainer_id"><![CDATA[slider-id]]></param>
+                    <param name="links"><![CDATA[on]]></param>
+                    <param name="type" value="flex"/>
+                    <param name="random" value="0"/>
+                    <param name="cssClass" value=""/>
+                    <param name="printCss" value="1" type="bool"/>
+                    <param name="printJs" value="1" type="bool"/>
+                    <!-- hidden options -->
+                    <param name="spw" value="7"/>
+                    <param name="sph" value="5"/>
+                    <param name="delay" value="3000"/>
+                    <param name="sDelay" value="30"/>
+                    <param name="opacity" value="0.8"/>
+                    <param name="titleSpeed" value="500"/>
+
+                    <param name="navigation" value="1"/>
+                    <param name="links" value="1"/>
+                    <param name="hoverPause" value="1"/>
+                    <param name="theme" value=""/>
+                    <param name="direction" value="horizontal"/>
+                    <param name="reverse" value="0"/>
+                    <param name="animationSpeed" value="600"/>
+                    <param name="prevText" value="&lt;"/>
+                    <param name="nextText" value="&gt;"/>
+                    <param name="slices" value="15"/>
+                    <param name="center" value="0"/>
+                    <param name="smartCrop" value="1"/>
+                    <param name="carouselMode" value="0"/>
+                    <param name="carouselMargin" value="5"/>
+                    <param name="easing" value="linear"/>
+                    <param name="autoPlay" value="1"/>
+
+                    <!--
+                    <param name="thumb_width" value="150"/>
+                    <param name="thumb_height" value="100"/>
+                    -->
+                    <param name="fullWidth" value="0"/>
+                    <param name="noConflict" value="1"/>
+                    <param name="hw_mlcontainer_id" value="0"/>
+                    <param name="smoothHeight" value="0"/>
+                </hw:settings>
+            </item>
+        </posts>
+    </hw:hw-ml-slider>
+</rss>
