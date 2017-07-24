@@ -27,11 +27,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="small-print">
         	<div class="container">
         	<?php
-				
 				do_action( 'hw_credits' );
 			?>
         		<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'my-theme' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'my-theme' ), 'WordPress' ); ?></a>
+			
         	</div>
         </div>
 		

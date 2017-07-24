@@ -60,13 +60,22 @@ if ( ! defined( 'ABSPATH' ) ) {
             		<li style="float:right;">
             			<div class="dropdown">
 						  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
-						  	<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>
-						  <span class="caret"></span></button>
+
+						  	<a class="cart-customlocation" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
+						  		<?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?> 
+						  		- <?php echo WC()->cart->get_cart_total(); ?></a>
+						  
+						  	<span class="caret"></span>
+
+						  </button>
 						  <ul class="dropdown-menu dropdown-menu-right">
 						    <li style="padding:10px" class="woocommerce widget_shopping_cart">
 						    <?php 
 						    //with no sidebar so use class
-						    hw_widget_content('widget="WC_Widget_Cart" args="hide_if_empty=1"'); 
+						    if(function_exists('hw_widget_content')) {
+						    	hw_widget_content('widget="WC_Widget_Cart" args="hide_if_empty=1"'); 
+						    }
+						    else the_widget();
 						    ?>
 						    </li>
 						    
@@ -77,12 +86,6 @@ if ( ! defined( 'ABSPATH' ) ) {
             	<div class="row" style="float:right;width: 80%">
                 <div class="col-md-6">
 				
-				</div>
-				<div class="col-md-6">
-					
-
-					
-
 				</div>
 				</div>
             </div>
@@ -105,3 +108,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 <?php echo do_shortcode('[hw_metaslider id=7]') ?>
+<?php do_action('hw_after_header') ?>

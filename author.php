@@ -18,12 +18,7 @@ hw_get_header(); ?>
 
 		<header class="archive-header">
 			<h1 class="archive-title">
-				<?php
-					
-					the_post();
-
-					printf( __( 'All posts by %s', 'my-theme' ), get_the_author() );
-				?>
+				<?php the_post();printf( __( 'All posts by %s', 'my-theme' ), get_the_author() );?>
 			</h1>
 			<?php if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-description"><?php the_author_meta( 'description' ); ?></div>

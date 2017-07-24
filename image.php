@@ -20,15 +20,21 @@ hw_get_header();
 	?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<h1 class="entry-title"><?php the_title( ); ?></h1>
 
 					<div class="entry-meta">
 
-						<span class="entry-date"><time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time></span>
+						<span class="entry-date">
+							<time class="entry-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"><?php echo esc_html( get_the_date() ); ?></time>
+						</span>
 
-						<span class="full-size-link"><a href="<?php echo esc_url( wp_get_attachment_url() ); ?>"><?php echo esc_html( $metadata['width'] ); ?> &times; <?php echo esc_html( $metadata['height'] ); ?></a></span>
+						<span class="full-size-link">
+							<a href="<?php echo esc_url( wp_get_attachment_url() ); ?>"><?php echo esc_html( $metadata['width'] ); ?> &times; <?php echo esc_html( $metadata['height'] ); ?></a>
+						</span>
 
-						<span class="parent-post-link"><a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" rel="gallery"><?php echo get_the_title( $post->post_parent ); ?></a></span>
+						<span class="parent-post-link">
+							<a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" rel="gallery"><?php echo get_the_title( $post->post_parent ); ?></a>
+						</span>
 						<?php edit_post_link( __( 'Edit', 'my-theme' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-meta -->
 				</header><!-- .entry-header -->
@@ -37,14 +43,14 @@ hw_get_header();
 					<div class="entry-attachment">
 						<div class="attachment">
 							<?php hw_the_attached_image(); ?>
-						</div><!-- .attachment -->
+						</div>
 
 						<?php if ( has_excerpt() ) : ?>
 						<div class="entry-caption">
 							<?php the_excerpt(); ?>
-						</div><!-- .entry-caption -->
+						</div>
 						<?php endif; ?>
-					</div><!-- .entry-attachment -->
+					</div>
 
 					<?php
 						the_content();
@@ -56,7 +62,7 @@ hw_get_header();
 						) );
 					?>
 				</div><!-- .entry-content -->
-			</article><!-- #post-## -->
+			</article>
 
 			<nav id="image-navigation" class="navigation image-navigation">
 				<div class="nav-links">
