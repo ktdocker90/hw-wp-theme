@@ -13,7 +13,33 @@ return array(
 		'taxonomy'=> [
 			'body_class'=> 'tax1',
 			'post_class'=> '',
+		],
+		'page'=> [
+			'body_class'=> 'page1',
+			'post_class'=> '',
 		]
+	],
+	'woo_settings'=> [
+		//general
+		//Enable/Disable deferred email sending
+		'defer_transactional_emails'=> false,
+		//Notify admin when a new customer account is created
+		'created_customer_admin_notify'=> true,
+
+		//checkout
+		//Minimum Order Amount
+		'minimum_order_amount'=> '1',
+
+		//PRODUCT
+		//Hide price suffix when product is not taxable.
+		'hide_price_suffix_with_not_taxable'=> true,
+		'disable_all_sale_prices'=> false,	//Disable ALL sale prices
+		'hide_subcategory_count'=> true,	//Hide sub-category product count
+		'upsells_limit'=> '10',	//Upsells product limit
+		'related_products_limit'=> '10',	//Related products limit
+		'loop_shop_per_page'=> '20',	//Products displayed per page
+		'hide_loop_read_more'=> false,	//Hide loop read more buttons for out of stock items
+		
 	],
 	//'template_loop_product_title'=> '<h2 class="woocommerce-loop-product__title">%s</h2>',
 	//'template_loop_category_title'=> '<h2 class="woocommerce-loop-category__title">%s</h2>',	

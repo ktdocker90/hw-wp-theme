@@ -25,24 +25,7 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-/**
- * @param string $key
- * @param string $defVal
- * @return mixed|string
- */
-if(!function_exists('hw_template_vars')) :
-function hw_template_vars($key='', $defVal='') {
-    static $data = array();
-    //$t = HW__Template::get_current();
-    $theme_dir = get_stylesheet_directory();
 
-    if(!count($data) && file_exists($theme_dir. '/hw-templates.php')) {
-        $data = include ($theme_dir. '/hw-templates.php');
-    }
-    if($key && isset($data[$key])) return $data[$key];
-    return $key? $defVal : $data;
-}
-endif;
 
 /**
  * Sets up theme defaults and registers the various WordPress features that
@@ -373,7 +356,7 @@ function hw_scripts_styles() {
 			'family' => 'Open+Sans:400italic,700italic,400,700',
 			'subset' => $subsets,
 		);
-		wp_enqueue_style( 'hw-theme-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
+		//wp_enqueue_style( 'hw-theme-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
 	}
 
 	/*
@@ -514,7 +497,7 @@ function hw_post_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'post_class', 'hw_post_classes' );
+//add_filter( 'post_class', 'hw_post_classes' );
 
 /**
  * Create a nicely formatted and more specific title element text for output
@@ -581,13 +564,13 @@ function hw_init() {
     if (!is_admin() && $GLOBALS['pagenow'] !== 'wp-login.php') {
         //remove default jquery used in wordpress
         wp_deregister_script('jquery');
-        //wp_register_script('jquery', TEMPLATE_URL.'/js/jquery-1.8.0.min.js', false, '1.3.2'); 
-        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, '1.3.2'); 
+        wp_register_script('jquery', TEMPLATE_URL.'/asset/jquery-1.11.1.min.js', false); 
+        //wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', false, '1.3.2'); 
         //wp_enqueue_script('jquery');
     }
-    //set_post_thumbnail(89,109);__print(get_post_thumbnail_id(89));
+    //set_post_thumbnail(89,109);
 }
-//add_action('init', 'hw_init');
+add_action('init', 'hw_init');
 
 
 //modify script/style defer
@@ -712,32 +695,15 @@ endif;
 /*
 session_start();
 if(!is_admin()){
-_print($_SESSION['tt1']);die;
-#_print($_SESSION['tt2']);
+_print($_SESSION['tt1']);
 }
 */
 /*
-$query = new WP_Query(array(
-    'numberposts' => 100,
-    'orderby' => 'date',
-    'order' => 'desc',
-    'posts_per_page' => 13,
-    'paged' => 1,
-    'taxonomy' => 'category',
-    'post_type' => [
-        'post',
-        'page'
-        ]
-
-));
-_print($query->post_count);
-*/
-
-	add_filter('wp_get_attachment_image_attributes', 'hw_wp_get_attachment_image_attributes',10,3);
-	function hw_wp_get_attachment_image_attributes($attr, $attachment, $size) {
-		$attr['class'] = 'img1';
-		return $attr;
-	}
+add_filter('wp_get_attachment_image_attributes', 'hw_wp_get_attachment_image_attributes',10,3);
+function hw_wp_get_attachment_image_attributes($attr, $attachment, $size) {
+	$attr['class'] = 'img1';
+	return $attr;
+}
 
 //custom fee to cart
 function woo_before_cart_table() {
@@ -820,7 +786,7 @@ function content_after_order_notes( $checkout ) {
     echo '</div>';
 
 }
-/*
+
 function filter_add_to_cart_fragments( $fragments ) {
 	global $woocommerce;
 	ob_start();
@@ -844,5 +810,4 @@ function hw_theme_comment($comment, $args, $depth) {
     include (TEMPLATE_PATH. '/template-parts/comment.php');
 }
 
-require_once (__DIR__. '/inc/framework/hw-navmenu.php');
-require_once (__DIR__. '/inc/framework/woocommerce.php');
+require_once (__DIR__. '/inc/framework/loader.php');

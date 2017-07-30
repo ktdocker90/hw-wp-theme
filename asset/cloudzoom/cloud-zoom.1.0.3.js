@@ -281,7 +281,7 @@
                 }
 
                 // Fix ie6 select elements wrong z-index bug. Placing an iFrame over the select element solves the issue...		
-                if ($.browser.msie && $.browser.version < 7) {
+                if ($.browser && $.browser.msie && $.browser.version < 7) {
                     $ie6Fix = $('<iframe frameborder="0" src="#"></iframe>').css({
                         position: "absolute",
                         left: xPos,
