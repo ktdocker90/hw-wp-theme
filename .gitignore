@@ -29,3 +29,7 @@ single.php
 tag.php
 taxonomy.php
 taxonomy-post_format.php
+config/modules
+config/readme.txt
+config/skins.xml
+config/widgets.xml
