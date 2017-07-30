@@ -26,6 +26,25 @@ if ( version_compare( $GLOBALS['wp_version'], '3.6', '<' ) ) {
 }
 
 /**
+ * @param string $key
+ * @param string $defVal
+ * @return mixed|string
+ */
+if(!function_exists('hw_template_vars')) :
+function hw_template_vars($key='', $defVal='') {
+    static $data = array();
+    //$t = HW__Template::get_current();
+    $theme_dir = get_stylesheet_directory();
+
+    if(!count($data) && file_exists($theme_dir. '/hw-templates.php')) {
+        $data = include ($theme_dir. '/hw-templates.php');
+    }
+    if($key && isset($data[$key])) return $data[$key];
+    return $key? $defVal : $data;
+}
+endif;
+
+/**
  * Sets up theme defaults and registers the various WordPress features that
  * hoangweb supports.
  *
@@ -43,7 +62,7 @@ function hw_theme_setup() {
 	load_theme_textdomain( 'hw-theme' );
 
 	// This theme styles the visual editor to resemble the theme style.
-	add_editor_style( array( 'assets/css/editor-style.css', hw_font_url(), 'assets/genericons/genericons.css' ) );
+	//add_editor_style( array( 'assets/css/editor-style.css', hw_font_url(), 'assets/genericons/genericons.css' ) );
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -219,7 +238,10 @@ function hw_font_url() {
 }
 
 function hw_content_nav() {
-	if(function_exists('wp_pagenavi')):
+	if(file_exists('template-parts/pagination.php')) :
+		include ('template-parts/pagination.php');
+	
+	elseif(function_exists('wp_pagenavi')):
 	    wp_pagenavi(/*array( 'type' => 'multipart' )*/);  
 	else :
 	// Previous/next page navigation.
@@ -228,6 +250,7 @@ function hw_content_nav() {
 		'next_text'          => __( 'Next page', 'twentysixteen' ),
 		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>',
 	) );
+	
 	endif;
 }
 
@@ -373,7 +396,7 @@ function hw_scripts_styles() {
 	wp_enqueue_style( 'hw-theme-lato', hw_font_url(), array(), null );
 
 	// Add Genericons font, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/genericons/genericons.css', array(), '3.0.3' );
+	//wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/genericons/genericons.css', array(), '3.0.3' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -395,7 +418,7 @@ function hw_scripts_styles() {
 		) );
 	}
 */
-	//wp_enqueue_script( 'hw-theme-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
+	wp_enqueue_script( 'hw-theme-script', get_template_directory_uri() . '/asset/custom.js', array( 'jquery' ), '20150315', true );
 }
 add_action( 'wp_enqueue_scripts', 'hw_scripts_styles' );
 
@@ -797,7 +820,7 @@ function content_after_order_notes( $checkout ) {
     echo '</div>';
 
 }
-
+/*
 function filter_add_to_cart_fragments( $fragments ) {
 	global $woocommerce;
 	ob_start();
@@ -808,3 +831,18 @@ function filter_add_to_cart_fragments( $fragments ) {
 	return $fragments;	
 }
 
+*/
+function hw_theme_comment($comment, $args, $depth) {
+    /*if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }*/
+    $add_below = 'div-comment';
+    include (TEMPLATE_PATH. '/template-parts/comment.php');
+}
+
+require_once (__DIR__. '/inc/framework/hw-navmenu.php');
+require_once (__DIR__. '/inc/framework/woocommerce.php');

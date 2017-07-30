@@ -19,8 +19,11 @@ return array(
 	//'template_loop_category_title'=> '<h2 class="woocommerce-loop-category__title">%s</h2>',	
 	'taxonomy_archive_description'=> '<div class="term-description">%s</div>',
 	'product_archive_description'=> '<div class="page-description">%s</div>',
-	'widget_shopping_cart_button_view_cart'=> '<a href="%s" class="button wc-forward">%s</a>',
-	'widget_shopping_cart_proceed_to_checkout'=> '<a href="%s" class="button checkout wc-forward">%s</a>',
+	
+	//move to woocommerce/custom/
+	//'widget_shopping_cart_button_view_cart'=> '<a href="%s" class="button wc-forward">%s</a>',
+	//'widget_shopping_cart_proceed_to_checkout'=> '<a href="%s" class="button checkout wc-forward">%s</a>',
+	
 	'subcategory_thumbnail'=> '<img src="%s" alt="%s" width="%s" height="%s" srcset="%s" sizes="%s" />',
 	//'single_variation'=> '<div class="woocommerce-variation single_variation"></div>',
 	//'sale_flash'=> '<span class="onsale">%s</span>',
@@ -34,6 +37,9 @@ return array(
 		'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
 	),
 	'breadrumb_home_url'=> 'http://vinacart.net',
+	'yoast_breadcrumb'=> [
+		'separator'=> '/'
+	],
 	'loop_shop_columns'=> array(
 		'default'=> '4',
 		'is_product_category'=> '4',
@@ -65,6 +71,48 @@ return array(
 	//'filter_upsell_display_args'=> '',
 	//'filter_output_related_products_args'=> '',
 	'filter_add_to_cart_fragments'=> 'filter_add_to_cart_fragments',
-	''=> '',
-	''=> '',
+	'navmenu'=> [
+		'primary'=> [
+			'ex_separator'=> '|',
+			'submenu_container_class'=> 'dropdown-menu menu-level-1',
+			//'allow_tags_nav_menu'=> '',
+			'anchor_attrs'=> '',
+			'anchor_attrs_has_submenu'=> '',
+			'anchor_attrs_submenu'=> '',
+			'anchor_class'=> '',
+			'anchor_class_has_submenu'=> '',
+			'anchor_class_submenu'=> '',
+			'menu_item_class'=> '',
+			'menu_item_class_focus'=> '',
+			'menu_item_class_has_submenu'=> 'dropdown',
+			'menu_item_class_submenu'=> 'level2',
+			'first_menu_item_class'=> '',
+			'last_menu_item_class'=> '',
+			'menu_class'=> 'nav navbar-nav',
+			'menu_id'=> 'navbar',
+			'before'=> '',
+			'after'=> '',
+			'link_before'=> '',
+			'link_after'=> '',
+			'depth'=> '10',
+		]
+		
+	],
+	'checkout_fields'=> [
+		'order_comments_input_class'=> ['form-control']
+	],
+	'address_fields'=> [
+		'input_class'=> ['form-control'],
+		'label_class'=> ['control-label'],
+		'form_row_class'=> ['row1']
+	],
+	'sidebars'=> [
+		'sidebar-footer'=> [
+			'before_widget'=> '<div class="%2$s *1 col-md-2" id="%1$s">',
+			'before_title'=> '<h3 class="%2$s" style="{css_title};">',
+			'after_title'=> '</h3><div class="infomation">',
+			'after_widget'=> '</div></div>',
+			'description'=> '',
+		]
+	]
 );
