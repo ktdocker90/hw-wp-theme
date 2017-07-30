@@ -33,3 +33,13 @@ config/modules
 config/readme.txt
 config/skins.xml
 config/widgets.xml
+content-aside.php
+content-audio.php
+content-featured-post.php
+content-gallery.php
+content-image.php
+content-link.php
+content-none.php
+content-page.php
+content-quote.php
+content-video.php
